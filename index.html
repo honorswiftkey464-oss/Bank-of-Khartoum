@@ -1,29 +1,119 @@
 
-let selectedService = "";
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>بوابة الخدمات الإلكترونية</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-function chooseService(service) {
-  selectedService = service;
+<header>
+  <div class="top-bar">بوابة الخدمات الإلكترونية</div>
+  <h1>بنك الخرطوم</h1>
+  <p class="notice">نموذج تجريبي غير رسمي</p>
+</header>
 
-  document.getElementById("selectedService").textContent =
-    selectedService;
+<main class="container">
 
-  document.getElementById("previewService").textContent =
-    selectedService;
+  <section id="home" class="page active">
+    <h2>مرحباً بكم في بنك الخرطوم</h2>
+    <p>الرجاء الاختيار من الخدمات المقدمة أدناه.</p>
 
-  goTo("details");
-}
+    <div class="services">
+      <button class="service" onclick="chooseService('تحديث البيانات')">
+        <span>👤</span>
+        <strong>تحديث البيانات</strong>
+        <small>تحديث بيانات الحساب الشخصية.</small>
+      </button>
 
-function goTo(pageId) {
-  const pages = document.querySelectorAll(".page");
+      <button class="service" onclick="chooseService('رفع سقف التحويلات اليومية')">
+        <span>📈</span>
+        <strong>رفع سقف التحويلات اليومية</strong>
+        <small>زيادة الحد اليومي للتحويلات.</small>
+      </button>
 
-  pages.forEach(function(page) {
-    page.classList.remove("active");
-  });
+      <button class="service" onclick="chooseService('التحويلات الخاطئة')">
+        <span>🔄</span>
+        <strong>التحويلات الخاطئة</strong>
+        <small>استعراض معلومات معالجة أخطاء التحويلات.</small>
+      </button>
 
-  document.getElementById(pageId).classList.add("active");
+      <button class="service" onclick="chooseService('خدمات العملات الأجنبية')">
+        <span>💱</span>
+        <strong>خدمات العملات الأجنبية</strong>
+        <small>استعراض خدمات العملات الأجنبية.</small>
+      </button>
 
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
-}
+      <button class="service" onclick="chooseService('كشف الحساب')">
+        <span>📄</span>
+        <strong>كشف الحساب</strong>
+        <small>استعراض معلومات كشف الحساب.</small>
+      </button>
+
+      <button class="service" onclick="chooseService('بطاقة فيزا افتراضية')">
+        <span>💳</span>
+        <strong>بطاقة فيزا افتراضية</strong>
+        <small>استعراض معلومات البطاقة الافتراضية.</small>
+      </button>
+
+      <button class="service" onclick="chooseService('حساب جاري وحساب مميز')">
+        <span>🏦</span>
+        <strong>حساب جاري وحساب مميز</strong>
+        <small>استعراض خيارات الحسابات.</small>
+      </button>
+
+      <button class="service" onclick="chooseService('إدارة أسئلة الأمان')">
+        <span>🔐</span>
+        <strong>إدارة أسئلة الأمان</strong>
+        <small>معلومات توعوية عن إعدادات الأمان.</small>
+      </button>
+    </div>
+  </section>
+
+  <section id="details" class="page">
+    <h2>الاستمارة أونلاين</h2>
+    <p>صفحة استعراض تجريبية لا تطلب بيانات مصرفية.</p>
+    <div class="info">
+      <strong>الخدمة المختارة:</strong>
+      <p id="selectedService"></p>
+    </div>
+    <button onclick="goTo('preview')">متابعة</button>
+    <button class="secondary" onclick="goTo('home')">العودة</button>
+  </section>
+
+  <section id="preview" class="page">
+    <h2>معاينة الطلب</h2>
+    <p>راجع تفاصيل الطلب قبل المتابعة.</p>
+    <div class="info">
+      <p><strong>نوع الطلب:</strong> طلب استعراض خدمة تجريبية</p>
+      <p><strong>الخدمة المختارة:</strong>
+        <span id="previewService"></span>
+      </p>
+      <p><strong>حالة الطلب:</strong> نموذج تجريبي</p>
+    </div>
+    <button onclick="goTo('success')">تأكيد الطلب التجريبي</button>
+    <button class="secondary" onclick="goTo('home')">تعديل الخدمة</button>
+  </section>
+
+  <section id="success" class="page">
+    <div class="success-icon">✓</div>
+    <h2>تمت العملية بنجاح</h2>
+    <p>تم إكمال خطوات الاستعراض التجريبي بنجاح. شكراً لاستخدام النموذج التجريبي.</p>
+    <button onclick="goTo('home')">العودة إلى الصفحة الرئيسية</button>
+  </section>
+
+</main>
+
+<a class="whatsapp" href="https://wa.me/" target="_blank">☎</a>
+
+<footer>
+  <p>بوابة الخدمات الإلكترونية – 2026</p>
+  <p>جميع الحقوق محفوظة © 2026</p>
+  <p>تجريبي – 23/11/2026</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
