@@ -1,1 +1,187 @@
 
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Tahoma, sans-serif;
+  background: #f1f2f4;
+  color: #333;
+  direction: rtl;
+}
+
+header {
+  text-align: center;
+  background: white;
+  padding-bottom: 18px;
+}
+
+.top-bar {
+  background: #f4c400;
+  padding: 13px;
+  font-weight: bold;
+  color: #333;
+}
+
+header h1 {
+  color: #b51f2b;
+  margin: 22px 0 10px;
+}
+
+.notice {
+  background: #fff3cd;
+  color: #765900;
+  padding: 10px;
+  margin: 10px auto;
+  width: 90%;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.container {
+  width: 92%;
+  max-width: 850px;
+  margin: 25px auto;
+}
+
+.page {
+  display: none;
+  background: white;
+  padding: 24px;
+  border-radius: 14px;
+  box-shadow: 0 3px 12px #00000012;
+}
+
+.page.active {
+  display: block;
+}
+
+h2 {
+  color: #b51f2b;
+  text-align: center;
+}
+
+.page > p {
+  text-align: center;
+  line-height: 1.8;
+}
+
+.services {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-top: 25px;
+}
+
+.service {
+  background: white;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 18px 10px;
+  text-align: center;
+  cursor: pointer;
+  color: #333;
+  box-shadow: 0 2px 8px #0000000c;
+  min-height: 135px;
+}
+
+.service:hover {
+  border-color: #b51f2b;
+}
+
+.service span {
+  display: block;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.service strong {
+  display: block;
+  color: #b51f2b;
+  margin-bottom: 8px;
+}
+
+.service small {
+  color: #666;
+  line-height: 1.6;
+}
+
+button:not(.service) {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  background: #b51f2b;
+  color: white;
+  font-size: 16px;
+  margin-top: 14px;
+  cursor: pointer;
+}
+
+button.secondary {
+  background: #777;
+}
+
+.info {
+  background: #f7f7f7;
+  padding: 18px;
+  border-radius: 10px;
+  margin: 20px 0;
+  line-height: 1.9;
+}
+
+.success-icon {
+  background: #e7f5e9;
+  color: #228b45;
+  border-radius: 50%;
+  width: 65px;
+  height: 65px;
+  line-height: 65px;
+  text-align: center;
+  font-size: 35px;
+  margin: 15px auto;
+}
+
+.whatsapp {
+  position: fixed;
+  bottom: 25px;
+  left: 18px;
+  background: #20b95a;
+  color: white;
+  text-decoration: none;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 52px;
+  font-size: 27px;
+  box-shadow: 0 3px 10px #0003;
+}
+
+footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  width: 100%;
+  font-size: 12px;
+  line-height: 1.5;
+  margin-top: 25px;
+}
+
+footer p {
+  margin: 4px;
+}
+
+@media (max-width: 550px) {
+  .services {
+    grid-template-columns: 1fr;
+  }
+
+  .page {
+    padding: 18px;
+  }
+}
