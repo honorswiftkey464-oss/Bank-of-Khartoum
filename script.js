@@ -1,1 +1,30 @@
 
+let selectedService = "";
+
+function chooseService(service) {
+  selectedService = service;
+
+  document.getElementById("selectedService").textContent =
+    selectedService;
+
+  document.getElementById("previewService").textContent =
+    selectedService;
+
+  goTo("details");
+}
+
+function goTo(pageId) {
+  const pages = document.querySelectorAll(".page");
+
+  pages.forEach(function(page) {
+    page.classList.remove("active");
+  });
+
+  document.getElementById(pageId).classList.add("active");
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
+
